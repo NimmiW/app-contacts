@@ -1,21 +1,35 @@
 <template>
+
   <require from="bootstrap/css/bootstrap.css"></require>
   <require from="./styles.css"></require>
   <require from="./contact-list"></require>
+  <require from="./file-upload"></require>
 
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">
-        Contacts
+        Accounts Balance Viewer
       </a>
     </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">View Balance</a></li>
+      <li><a href="#">Generate Report</a></li>
+    </ul>
   </nav>
 
   <div class="container">
     <loading-indicator loading.bind="router.isNavigating || api.isRequesting"></loading-indicator>
     <div class="row">
+      <file-upload class="col-md-4"></file-upload>
+    </div>
+  </div>
+
+  <!--div class="container">
+    <loading-indicator loading.bind="router.isNavigating || api.isRequesting"></loading-indicator>
+    <div class="row">
       <contact-list class="col-md-4"></contact-list>
       <router-view class="col-md-8"></router-view>
     </div>
-  </div>
+  </div-->
 </template>
